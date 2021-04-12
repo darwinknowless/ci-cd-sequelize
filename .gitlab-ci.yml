@@ -14,10 +14,6 @@ test:
   image: node:latest
   # Attach Test job to Test stage
   stage: test
-  
-  script:
-  - chmod +x ./gradlew
-  - ./gradlew --build-cache assemble
   # Config to use GitLab Shared Runner with Executor Docker
   tags:
     - docker
@@ -36,10 +32,6 @@ deploy:
   type: deploy
   # Attach Deploy job to Deploy stage
   stage: deploy
-  
-  script:
-  - chmod +x ./gradlew
-  - ./gradlew --build-cache assemble
   # Config to use our Runner with Executor Shell
   tags:
     # Tag is runner u make before
