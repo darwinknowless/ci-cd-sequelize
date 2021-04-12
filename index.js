@@ -31,7 +31,7 @@ app.use(express.static("public"));
 // Make routes
 app.use("/auth", authRoutes);
 app.use("/barang", barangRoutes);
-app.use("/pemasok", pemasokRoutes);
+// app.use("/pemasok", pemasokRoutes);
 app.use("/pelanggan", pelangganRoutes);
 app.use("/transaksi", transaksiRoutes);
 
