@@ -130,3 +130,7 @@ value : (copy paste .env.test JWT_SECRET here)
 type : (leave it)
 environment scope : (leave it)
 flags : uncheck all
+
+7. on gitlab.com
+>> go to ur project u create before
+>> go to CI/CD => pipeline
