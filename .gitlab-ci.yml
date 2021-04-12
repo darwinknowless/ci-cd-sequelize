@@ -16,8 +16,6 @@ test:
   stage: test
   
   script:
-  - chmod +x ./gradlew
-  - ./gradlew --build-cache assemble
   # Config to use GitLab Shared Runner with Executor Docker
   tags:
     - docker
@@ -29,17 +27,13 @@ test:
   # Defines the names of branches and tags the job runs for
   only:
     # Branch on Gitlab
-    - master
+    - ci-cd
 
 # Deploy job
 deploy:
   type: deploy
   # Attach Deploy job to Deploy stage
   stage: deploy
-  
-  script:
-  - chmod +x ./gradlew
-  - ./gradlew --build-cache assemble
   # Config to use our Runner with Executor Shell
   tags:
     # Tag is runner u make before
@@ -56,4 +50,4 @@ deploy:
     - npm run start
   only:
     # Branch on Gitlab
-    - master
+    - ci-cd
