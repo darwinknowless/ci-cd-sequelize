@@ -134,3 +134,6 @@ flags : uncheck all
 7. on gitlab.com
 >> go to ur project u create before
 >> go to CI/CD => pipeline
+
+8. Last
+>> sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
