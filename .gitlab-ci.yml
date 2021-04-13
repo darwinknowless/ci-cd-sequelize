@@ -20,7 +20,7 @@ test:
   tags:
     - docker
   script:
-    - echo "MONGO_URI"=$ENVIRONMENT_TEST_MONGO_URI >> .env.test
+    - echo "MONGO_URI"=$ENVIRONMENT_TEST_MONGO_URI > .env.test
     - echo "JWT_SECRET"=$ENVIRONMENT_TEST_JWT_SECRET >> .env.test
     - npm i
     - npm run test
@@ -42,7 +42,7 @@ deploy:
     # Only copy changed files to project folder
     - cp -r -u * $PROJECT_DIR
     - cd $PROJECT_DIR
-    - echo "MONGO_URI"=$ENVIRONMENT_PRODUCTION_MONGO_URI >> .env.production
+    - echo "MONGO_URI"=$ENVIRONMENT_PRODUCTION_MONGO_URI > .env.production
     - echo "JWT_SECRET"=$ENVIRONMENT_PRODUCTION_JWT_SECRET >> .env.production
     - npm i
     # Restart NodeJS service
